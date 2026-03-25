@@ -1,56 +1,112 @@
 import React from "react";
 
-function page() {
-  const heading = {
-    // textAlign:'center',
-    color: "Black",
-    fontSize: "50px",
-    fontFamily: "cursive",
-    marginTop: "20px",
-    marginLeft: "20%",
-  };
-
+function Page() {
   const container = {
-    // display:'flex',
+    height: "100vh",
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
-    marginLeft: "25%",
+    backgroundColor: "#f5f5f5",
+  };
+
+  const card = {
+    width: "350px",
+    height: "600px",
     backgroundColor: "white",
-    width: "50%",
+    borderRadius: "15px",
+    boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+    display: "flex",
+    flexDirection: "column",
+    overflow: "hidden",
   };
 
-  const headingDiv = {
-    height: "15%",
+  const header = {
+    backgroundColor: "#4f46e5",
+    color: "white",
+    padding: "15px",
+    fontSize: "20px",
+    fontWeight: "bold",
+  };
+
+  const chatBody = {
+    flex: 1,
+    padding: "15px",
+    backgroundColor: "#f3f4f6",
+    overflowY: "auto",
+  };
+
+  const botMessage = {
+    backgroundColor: "#e5e7eb",
+    padding: "10px",
+    borderRadius: "10px",
+    marginBottom: "10px",
+    width: "80%",
+  };
+
+  const buttonContainer = {
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
+    marginTop: "10px",
+  };
+
+  const button = {
+    padding: "8px 12px",
+    borderRadius: "20px",
+    border: "1px solid #3b82f6",
+    backgroundColor: "white",
+    color: "#3b82f6",
+    cursor: "pointer",
+  };
+
+  const inputBox = {
+    padding: "10px",
+    borderTop: "1px solid #ddd",
+  };
+
+  const input = {
     width: "100%",
-    backgroundColor: "blue",
+    padding: "10px",
+    borderRadius: "20px",
+    border: "1px solid #ccc",
+    outline: "none",
   };
 
-  const message ={
-    // marginLeft:'15%',
-    // marginTop:'20%',
-    margin:"0 auto",
-    height:'100%',
-    width:'100%',
-    backgroundColor:'lightgray',
-  }
-
-  const messageh1 = {
-    marginLeft:'20%',
-    // marginTop:'20%',
-  }
   return (
     <div style={container}>
-      <div style={headingDiv}>
-        <h1 style={heading}>ChatBot</h1>
-      </div>
+      <div style={card}>
+        {/* Header */}
+        <div style={header}>ChatBot</div>
 
-      <div style={message}>
-        <h1 style={messageh1}>chatbot</h1>
-      </div>
+        {/* Chat Body */}
+        <div style={chatBody}>
+          <div style={botMessage}>
+            Hello there! 👋 It's nice to meet you!
+          </div>
 
+          <div style={botMessage}>
+            What brings you here today? Please use the options below 👇
+          </div>
+
+          <div style={buttonContainer}>
+            <button style={button}>Build AI chatbot</button>
+            <button style={button}>Using ChatBot</button>
+            <button style={button}>I have questions</button>
+            <button style={button}>Just browsing</button>
+          </div>
+        </div>
+
+        {/* Input */}
+        <div style={inputBox}>
+          <input
+            style={input}
+            type="text"
+            placeholder="Type your message here..."
+          />
+        </div>
+      </div>
     </div>
   );
 }
 
-export default page;
+export default Page;
