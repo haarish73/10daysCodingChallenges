@@ -187,6 +187,10 @@ SUM()
 COALESCE()
 LEFT JOIN
 
+select c.customer_name, COALESCE(SUM(o.amount), 0) as total_spent
+From customer c JOIN orders 
+ON c.customer_id = o.customer_id;
+GROUP BY customer_name;
 
 
 
