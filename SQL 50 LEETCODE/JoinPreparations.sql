@@ -195,21 +195,37 @@ GROUP BY customer_name;
 
 
 
-🟡 Q5. Find the customer who spent the highest total amount
+-- 🟡 Q5. Find the customer who spent the highest total amount
 
-Return:
+-- Return:
 
-customer_name
-total_spent
+-- customer_name
+-- total_spent
 
-👉 Use:
+-- 👉 Use:
 
-JOIN
-GROUP BY
-ORDER BY DESC
-LIMIT 1
+-- JOIN
+-- GROUP BY
+-- ORDER BY DESC
+-- LIMIT 1
 
+-- solutions: 
 
+mysql> SELECT c.customer_name,
+    ->        SUM(o.amount) AS total_spent
+    -> FROM Customers c
+    -> LEFT JOIN Orders o
+    -> ON c.customer_id = o.customer_id
+    -> GROUP BY c.customer_name
+    -> ORDER BY total_spent DESC
+    -> LIMIT 1;
+
+    
+-- +---------------+-------------+
+-- | customer_name | total_spent |
+-- +---------------+-------------+
+-- | Harish        |       71000 |
+-- +---------------+-------------+
 
 Q6. Find customers who purchased more than 1 product
 
