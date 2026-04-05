@@ -1,12 +1,12 @@
-🚀 10 Days Coding Challenge
+n * (n+1) / 2 Days Coding Challenge
 
-Welcome to my 10 Days Coding Challenge repository! 💻✨
+
 
 This challenge is a personal initiative to improve my problem-solving skills, consistency, and coding discipline.
 
 📅 Challenge Overview
 
-📌 Duration: 10 Days
+
 
 🧠 Focus: DSA / Problem Solving / Logic Building
 
